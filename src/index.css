@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Lexend:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Lexend", ui-sans-serif, system-ui, sans-serif;
+
+  /* Brand Colors from provided HTML palette */
+  --color-primary: #006d37;
+  --color-primary-container: #2ecc71;
+  --color-secondary: #83439e;
+  --color-secondary-container: #e29bfe;
+  --color-tertiary: #735c00;
+  --color-tertiary-container: #d7ae00;
+  
+  --color-surface: #f8f9fa;
+  --color-background: #f8f9fa;
+  
+  --radius-xl: 0.5rem; /* 8px as per user mock */
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.5rem;
+  --radius-4xl: 2rem;
+}
+
+@layer base {
+  body {
+    @apply font-body bg-background text-zinc-900;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans font-bold tracking-tight;
+  }
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.bouncy-hover {
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.bouncy-hover:hover {
+  transform: translateY(-4px) scale(1.02);
+}
